@@ -234,17 +234,26 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-   var newArreglo = [];
-   var i = 0;
-   while (i < 10 && i < num.length);{
-      i += 1;
-      newArreglo.push(num[i-1] + 2);
-
-      if (i == num[i-1] + 2) {
-         break; 
-      } 
-   }
    
+   var Resultado = []; // Array donde se guardarán los valores de cada iteración
+
+   // Bucle "for" que se ejecutará mientras "i" sea menor a 10
+  for (i = 0; i < 10; i++) {
+    // Aumentar el número recibido en 2
+    num += 2;
+
+    // Agregar el nuevo valor a la array de resultados
+    Resultado.push(num);
+
+    // Si el valor de la suma y la cantidad de iteraciones coinciden, retornar el string "Se interrumpió la ejecución"
+    if (num === i) {
+      return "Se interrumpió la ejecución";
+    }
+  }
+
+  // Si no se ha interrumpido la ejecución, devolver el array de resultados
+  return Resultado;           
+ 
 }
 
 function continueStatement(num) {
@@ -254,6 +263,18 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+
+   var nuevoArreglo = [];
+   
+   for (i = 0; i < 10; i++){
+      if (i === 5)
+      continue;
+
+      num += 2; 
+      nuevoArreglo.push(num)
+      
+   }
+   return nuevoArreglo;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
